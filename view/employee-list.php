@@ -13,7 +13,7 @@
                 <label class="sr-only" for="inlineFormInputName2">Name</label>
                 <input name="keyword" size="30" type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Search">
                 <input name="page" type="text" hidden value="search-list">
-                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                <button type="submit" class="btn btn-primary mb-2">Search</button>
             </form>
             <table class="table" style="text-align: center">
                 <thead class="thead-light">

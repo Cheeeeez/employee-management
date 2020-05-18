@@ -112,7 +112,7 @@ class EmployeeDB
 
     public function search($keyword)
     {
-        $sql = "SELECT employeeNumber, employees.name, gender, dateOfBirth, email, phone, address, position.name AS position , avatar FROM employees JOIN position ON employees.positionId = position.positionId WHERE employees.name LIKE '%$keyword%' OR employeeNumber = $keyword";
+        $sql = "SELECT employeeNumber, employees.name, gender, dateOfBirth, email, phone, address, position.name AS position , avatar FROM employees JOIN position ON employees.positionId = position.positionId WHERE employees.name LIKE '%$keyword%' OR employeeNumber = '$keyword'";
         $statement = $this->conn->query($sql);
         $result = $statement->fetchAll();
         $employees = [];

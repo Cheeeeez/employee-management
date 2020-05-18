@@ -1,4 +1,5 @@
 <?php
+var_dump($employee);
 
 ?>
 <div class="container m-t-50">
@@ -48,7 +49,9 @@
                     <label for="position">Job Title <span style="color:red;">*</span></label>
                     <select name="position" id="position" class="form-control">
                         <?php foreach ($positionList as $position): ?>
-                            <option value="<?php echo $position['positionId'] ?>"selected><?php echo $position['name'] ?></option>
+                            <option value="<?php echo $position['positionId'] ?>" <?php if ($position['positionId'] == $employee->getPosition()) {
+                                echo "selected";
+                            }?>><?php echo $position['name'] ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -57,7 +60,7 @@
                     <div class="input-group">
                         <div class="custom-file">
                             <input type="file" name="avatar" class="custom-file-input" id="inputGroupFile04"
-                                   aria-describedby="inputGroupFileAddon04" value="<?php echo $employee->getAvatar()?>">
+                                   aria-describedby="inputGroupFileAddon04" value="">
                             <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
                             <input type="text" name="old-avatar" value="<?php echo $employee->getAvatar()?>" hidden>
                         </div>
