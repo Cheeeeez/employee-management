@@ -1,3 +1,6 @@
+<?php
+
+?>
 <div class="container m-t-50">
     <div class="row">
         <div class="col-md-3"></div>
@@ -12,11 +15,15 @@
                 <div class="form-group">
                     <label>Gender</label>
                     <div class="form-check form-check-inline">
-                        <input type="radio" id="male" name="gender" class="form-check-input" value="Male" checked>
+                        <input type="radio" id="male" name="gender" class="form-check-input" value="Male" <?php if ($employee->getGender() == 'Male') {
+                            echo "checked";
+                        }?>>
                         <label class="form-check-label" for="male">Male</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" id="female" name="gender" value="Female">
+                        <input type="radio" class="form-check-input" id="female" name="gender" value="Female" <?php if ($employee->getGender() == 'Female') {
+                            echo "checked";
+                        }?>>
                         <label for="female" class="form-check-label">Female</label>
                     </div>
                 </div>
@@ -35,7 +42,7 @@
                 </div>
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input type="text" name="address" id="address" class="form-control" value="<?php  echo $employee->getAddress()?>">
+                    <input type="text" name="address" id="address" class="form-control" value="<?php echo $employee->getAddress()?>">
                 </div>
                 <div class="form-group">
                     <label for="position">Job Title <span style="color:red;">*</span></label>
@@ -52,6 +59,7 @@
                             <input type="file" name="avatar" class="custom-file-input" id="inputGroupFile04"
                                    aria-describedby="inputGroupFileAddon04" value="<?php echo $employee->getAvatar()?>">
                             <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                            <input type="text" name="old-avatar" value="<?php echo $employee->getAvatar()?>" hidden>
                         </div>
                     </div>
                 </div>

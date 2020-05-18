@@ -89,7 +89,7 @@ class EmployeeDB
 
     public function getAll()
     {
-        $sql = "SELECT employeeNumber, employees.name, gender, dateOfBirth, email, phone, address, position.name AS position , avatar FROM employees JOIN position ON employees.positionId = position.positionId";
+        $sql = "SELECT employeeNumber, employees.name, gender, dateOfBirth, email, phone, address, position.name AS position , avatar FROM employees JOIN position ON employees.positionId = position.positionId ORDER BY employeeNumber";
         $statement = $this->conn->query($sql);
         $row = $statement->fetchAll();
         $employees = [];

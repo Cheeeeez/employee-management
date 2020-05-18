@@ -4,6 +4,7 @@
             unset($_SESSION['message'])?>")
     </script>
 <?php endif; ?>
+
 <div class="container m-t-50">
     <form class="form-inline" method="get">
         <input type="month" name="month" class="form-control" placeholder="From day">

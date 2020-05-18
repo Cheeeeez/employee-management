@@ -62,10 +62,11 @@ class EmployeeController
             $phone = $_POST['phone'];
             $address = $_POST['address'];
             $position = $_POST['position'];
-            if ($_FILES['avatar']['name'] == "") {
-                $avatarName = 'default.png';
+            if ($_FILES['avatar'][$name] == "") {
+                $avatarName = $_POST['old-avatar'];
             } else {
                 $avatarName = time() . '-' . $_FILES['avatar']['name'];
+                unlink('img/' . $_POST['old-avatar']);
             }
             $destination = "img/" . $avatarName;
             move_uploaded_file($_FILES['avatar']['tmp_name'], $destination);
